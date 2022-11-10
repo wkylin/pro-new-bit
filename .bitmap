@@ -63,5 +63,11 @@
         "mainFile": "index.ts",
         "rootDir": "co-bit/my-workspace"
     },
+    "wui/wui-react": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "co-bit/wui/wui-react"
+    },
     "$schema-version": "15.0.0"
 }

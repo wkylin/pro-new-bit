@@ -28,4 +28,8 @@ CMD bit start
 # docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 # --registry http://localhost:4873/
 # npm install -g nrm
-# npm adduser --registry http://localhost:4873/
+# 1. Login
+# $ npm adduser --registry http://localhost:4873/
+# 2. Publish
+# $ npm publish --registry http://localhost:4873/
+# 3. Refresh this page

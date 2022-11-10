@@ -7,5 +7,5 @@
   "exclude": [
     "dist"
   ],
-  "include": ["src", "types", ".eslintrc.js"]
+  "include": [ "types", ".eslintrc.js"]
 }

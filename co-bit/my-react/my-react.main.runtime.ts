@@ -16,8 +16,8 @@ export class MyReactMain {
 
   generator.registerComponentTemplate([
       {
-        name: 'component1',
-        description: 'description for component1',
+        name: 'my-react',
+        description: 'description for my react component',
         generateFiles: (context: ComponentContext) => {
           return [
 
@@ -26,68 +26,76 @@ export class MyReactMain {
               relativePath: 'index.ts',
               isMain: true,
               content: `export { ${context.namePascalCase} } from './${context.name}';
-                export type { ${context.namePascalCase}Props } from './${context.name}';
-                `,
+export type { ${context.namePascalCase}Props } from './${context.name}';
+`,
             },
 
             // component file
             {
               relativePath: `${context.name}.tsx`,
               content: `import React from 'react';
-                export type ${context.namePascalCase}Props = {
-                  /**
-                   * a text to be rendered in the component.
-                   */
-                  text: string
-                };
+              import styles from '${context.name}.module.less';
+export type ${context.namePascalCase}Props = {
+  /**
+   * a text to be rendered in the component.
+   */
+  text: string
+};
 
-                export function ${context.namePascalCase}({ text }: ${context.namePascalCase}Props) {
-                  return (
-                    <div>
-                      {text}
-                    </div>
-                  );
-                }`,
+export function ${context.namePascalCase}({ text }: ${context.namePascalCase}Props) {
+  return (
+    <div>
+      {text}
+    </div>
+  );
+}`,
             },
 
             // docs file
             {
               relativePath: `${context.name}.docs.mdx`,
               content: `---
-                description: 'A React Component for rendering text.'
-                labels: ['text', 'ui']
-                ---
+description: 'A React Component for rendering text.'
+labels: ['text', 'ui']
+---
 
-                import { ${context.namePascalCase} } from './${context.name}';
-                `
+import { ${context.namePascalCase} } from './${context.name}';
+`
             },
 
             // composition file
             {
               relativePath: `${context.name}.composition.tsx`,
               content: `import React from 'react';
-                import { ${context.namePascalCase} } from './${context.name}';
+import { ${context.namePascalCase} } from './${context.name}';
 
-                export const Basic${context.namePascalCase}  = () => (
-                  <${context.namePascalCase}  text="hello from ${context.namePascalCase} " />
-                );
-                `
+export const Basic${context.namePascalCase}  = () => (
+  <${context.namePascalCase}  text="hello from ${context.namePascalCase} " />
+);
+`
             },
 
             // test file
             {
               relativePath: `${context.name}.spec.tsx`,
               content: `import React from 'react';
-                import { render } from '@testing-library/react';
-                import { Basic${context.namePascalCase} } from './${context.name}.composition';
+import { render } from '@testing-library/react';
+import { Basic${context.namePascalCase} } from './${context.name}.composition';
 
-                it('should render with the correct text', () => {
-                  const { getByText } = render(<Basic${context.namePascalCase} />);
-                  const rendered = getByText('hello from ${context.namePascalCase}');
-                  expect(rendered).toBeTruthy();
-                });`
+it('should render with the correct text', () => {
+  const { getByText } = render(<Basic${context.namePascalCase} />);
+  const rendered = getByText('hello from ${context.namePascalCase}');
+  expect(rendered).toBeTruthy();
+});`
             },
+
             // add more files here such as css/sass
+            {
+              relativePath: `${context.name}.module.less`,
+              content: `.module-less {
+  font-size: 12px;
+}`
+            },
           ];
         },
       },
