@@ -63,6 +63,12 @@
         "mainFile": "index.ts",
         "rootDir": "co-bit/my-workspace"
     },
+    "ui/align-center": {
+        "scope": "co-bit",
+        "version": "0.0.4",
+        "mainFile": "index.ts",
+        "rootDir": "co-bit/ui/align-center"
+    },
     "wui/wui-react": {
         "scope": "",
         "version": "",

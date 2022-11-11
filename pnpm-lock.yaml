@@ -65,9 +65,6 @@ importers:
   co-bit/extensions/my-compiler:
     specifiers: {}
 
-  co-bit/mui/mui-button:
-    specifiers: {}
-
   co-bit/my-react:
     specifiers: {}
 
@@ -75,6 +72,12 @@ importers:
     specifiers: {}
 
   co-bit/my-workspace:
+    specifiers: {}
+
+  co-bit/ui/align-center:
+    specifiers: {}
+
+  co-bit/wui/wui-react:
     specifiers: {}
 
   wbit/bit-com/say-hello:
