@@ -39,6 +39,12 @@
         "mainFile": "index.ts",
         "rootDir": "co-bit/extensions/my-compiler"
     },
+    "hui/hook/use-counter": {
+        "scope": "hui-bit",
+        "version": "0.0.4",
+        "mainFile": "index.ts",
+        "rootDir": "hui-bit/hui/hook/use-counter"
+    },
     "my-react": {
         "scope": "co-bit",
         "version": "0.0.1",
